@@ -1,0 +1,29 @@
+import org.gradle.plugins.ide.eclipse.model.internal.FileReferenceFactory
+
+repositories { mavenCentral() }
+
+apply plugin: 'eclipse'
+apply plugin: 'java'
+
+
+
+dependencies {
+	compile 'junit:junit:4.10'
+	compile "com.google.guava:guava:18.0"
+	compile 'org.mongodb.morphia:morphia:0.108'
+	compile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.46.1'
+	compile fileTree(dir: 'libs', include: '*.jar')
+}
+
+eclipse.classpath.file {
+    whenMerged { classpath ->
+        classpath.entries.findAll { entry -> entry.path.contains('JemmyFX.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/JemmyFX-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('JemmyCore.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/JemmyCore-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('JemmySupport.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/JemmySupport-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('JemmyBrowser.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/JemmyBrowser-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('JemmyAWTInput.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/JemmyAWTInput-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('JemmyFXBrowser.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/JemmyFXBrowser-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('GlassImage.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/GlassImage-sources.jar")
+        classpath.entries.findAll { entry -> entry.path.contains('GlassRobot.jar') }*.sourcePath = new FileReferenceFactory().fromPath("libs/lib-src/GlassRobot-sources.jar")
+    }
+}

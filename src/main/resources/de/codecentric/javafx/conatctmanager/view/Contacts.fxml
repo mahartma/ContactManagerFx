@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox depthTest="ENABLE" prefHeight="574.0" prefWidth="571.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.ContactsController">
+   <children>
+      <HBox prefHeight="22.0" prefWidth="551.0" spacing="10.0">
+         <children>
+            <DatePicker fx:id="datePicker" />
+            <Button fx:id="btn" mnemonicParsing="false" onAction="#filter" text="filter" />
+         </children>
+      </HBox>
+      <TableView fx:id="tableView" editable="true" prefHeight="337.0" prefWidth="551.0">
+        <columns>
+          <TableColumn fx:id="firstNameColumn" prefWidth="100.0" text="Firstname" />
+          <TableColumn fx:id="lastNameColumn" prefWidth="100.0" text="Lastname" />
+            <TableColumn fx:id="emailColumn" prefWidth="150.0" text="E-Mail" />
+        </columns>
+      </TableView>
+      <HBox prefHeight="19.0" prefWidth="551.0" spacing="10.0">
+         <children>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#add" text="add" />
+            <Button fx:id="removeButton" mnemonicParsing="false" onAction="#remove" text="remove" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>

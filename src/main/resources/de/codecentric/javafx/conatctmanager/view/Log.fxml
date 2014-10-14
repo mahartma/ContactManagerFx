@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.LogController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="14.0" prefWidth="311.0" spacing="10.0">
+         <children>
+            <TextField fx:id="filter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#filter" prefHeight="28.0" prefWidth="150.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <CheckBox fx:id="added" mnemonicParsing="false" onAction="#filter" text="added" />
+            <CheckBox fx:id="modified" mnemonicParsing="false" onAction="#filter" text="modified" />
+            <CheckBox fx:id="removed" mnemonicParsing="false" onAction="#filter" text="removed" />
+         </children>
+      </HBox>
+      <ListView fx:id="logView" onKeyReleased="#filter" prefHeight="379.0" prefWidth="500.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ListView>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
