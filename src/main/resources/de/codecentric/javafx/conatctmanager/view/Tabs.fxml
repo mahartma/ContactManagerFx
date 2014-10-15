@@ -6,12 +6,12 @@
 
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.AppController">
   <tabs>
-    <Tab text="Contacts">
+    <Tab id="tabContacts" text="Contacts">
     	<content>
                 <fx:include fx:id="contacts" source="Contacts.fxml" />
          </content>
     </Tab>
-      <Tab text="Log">
+      <Tab id="tabLog" text="Log">
         <content>
                 <fx:include fx:id="log" source="Log.fxml" />
         </content>

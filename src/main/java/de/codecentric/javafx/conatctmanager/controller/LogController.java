@@ -48,7 +48,7 @@ public class LogController  {
 		filtered = new FilteredList<String>(items);
 		logView.setItems(filtered);
 		
-		items.addAll(repository.readAll().stream().map(LogEntry::getMessage)
+		items.addAll(repository.readAll().stream().map(LogEntry::toString)
 			.collect(toList()));
 	}
 	
