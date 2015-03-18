@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox depthTest="ENABLE" prefHeight="574.0" prefWidth="571.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.ContactsController">
+<VBox fx:id="view" depthTest="ENABLE" prefHeight="574.0" prefWidth="571.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.ContactsController">
    <children>
       <HBox prefHeight="22.0" prefWidth="551.0" spacing="10.0">
          <children>
