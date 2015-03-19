@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.LogController">
+<VBox fx:id="view" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.codecentric.javafx.conatctmanager.controller.LogController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="14.0" prefWidth="311.0" spacing="10.0">
          <children>

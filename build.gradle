@@ -10,6 +10,7 @@ apply plugin: 'java'
 dependencies {
 	compile 'junit:junit:4.10'
 	compile "com.google.guava:guava:18.0"
+    compile 'com.google.inject:guice:3.0'
 	compile 'org.mongodb.morphia:morphia:0.108'
 	compile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo:1.46.1'
 	compile fileTree(dir: 'libs', include: '*.jar')

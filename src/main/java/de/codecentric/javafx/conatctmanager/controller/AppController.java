@@ -5,32 +5,15 @@ import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TabPane;
-import de.codecentric.javafx.conatctmanager.repository.ContactRepository;
+import javafx.scene.Node;
 
 public class AppController implements Initializable {
 
     @FXML
-    private ContactsController contactsController;
-
-    @FXML
-    private LogController logController;
-
-    private ContactRepository contactRepository;
-
-    @FXML
-    private TabPane tabs;
+    private Node mainView;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        contactRepository = new ContactRepository();
-        contactsController.setData(contactRepository.getData());
-        logController.setData(contactRepository.getData());
-
-        tabs.addEventFilter(AddEvent.ADD_EVENT,
-                e -> {
-                    System.out.println("Contact added...");
-                }
-                );
+        mainView.addEventHandler(AddEvent.ADD_EVENT, event -> System.out.println("Contact added..."));
     }
 }

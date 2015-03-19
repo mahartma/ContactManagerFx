@@ -8,10 +8,10 @@ import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Id;
 
 @Entity
-public  class Contact {
-	
-	@Id 
-	private ObjectId id;
+public class Contact {
+
+    @Id
+    private ObjectId id;
 
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
@@ -19,11 +19,15 @@ public  class Contact {
 
     public Contact() {
     }
-    
+
     public Contact(String firstName, String lastName, String email) {
         this.firstName = new SimpleStringProperty(firstName);
         this.lastName = new SimpleStringProperty(lastName);
         this.email = new SimpleStringProperty(email);
+    }
+
+    public ObjectId getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -45,10 +49,10 @@ public  class Contact {
     public StringProperty emailProperty() {
         return email;
     }
-    
+
     public String getEmail() {
-		return email.get();
-	}
+        return email.get();
+    }
 
     public void setEmail(String fName) {
         email.set(fName);
